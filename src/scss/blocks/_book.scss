@@ -1,0 +1,232 @@
+.text__select {
+    position: relative;
+    width: 48.94%;
+    height: 60px;
+  
+    &[data-state="active"] {
+        .text__select-title {
+            &::before {
+            transform: translate(-3px, -50%) rotate(-45deg);
+            }
+    
+            &::after {
+            transform: translate(3px, -50%) rotate(45deg);
+            }
+        }
+        
+        .text__select-content {
+            opacity: 1;
+        }
+        
+        .text__select-label + .text__select-input + .text__select-label {
+            max-height: 60px;
+            border-top-width: 1px;
+        }
+    }
+}
+
+.text__select-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(51, 51, 51, 0.5);
+    width: 100%;
+    height: 100%;
+    background: #E5E5E5;
+    border-radius: 5px;
+    padding: 18px 20px 22px;
+    
+    cursor: pointer;
+  
+    &::before,
+    &::after {
+        content: "";
+    
+        position: absolute;
+        top: 50%;
+        right: 16px;
+    
+        display: block;
+        width: 10px;
+        height: 3px;
+    
+        transition: all 0.4s;
+    
+        background-color: rgba(51, 51, 51, 0.5);
+    
+        transform: translate(-3px, -50%) rotate(45deg);
+    }
+    &::after {
+        transform: translate(3px, -50%) rotate(-45deg);
+    }
+  
+    &:hover {
+        border-color: $main_color;
+    
+        &::before,
+        &::after {
+            background-color: $main_color;
+        }
+    }
+}
+
+.text__select-content {
+    position: absolute;
+    top: 60px;
+    left: 3px;
+    max-height: 240px;
+    overflow-y: scroll;
+
+    width: calc(100% - 6px);
+  
+    background-color: #E5E5E5;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    transition: all 0.6s;
+  
+    opacity: 0;
+    z-index: 8;
+
+    &::-webkit-scrollbar {
+        width: 6px; /* ширина для вертикального скролла */
+        height: 8px; /* высота для горизонтального скролла */
+        background-color: #E5E5E5;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(51, 51, 51, 0.5);
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+        display: none;
+    }
+    &::-webkit-scrollbar-button:vertical:end:increment {
+        display: none;
+    }
+    
+}
+.text__select-input {
+    display: none;
+  
+    &:checked + label {
+        background-color: #dbd6d6;
+    }
+    &:disabled + label {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+}
+.text__select-label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    max-height: 0;
+    padding: 0 16px;
+    color: rgba(51, 51, 51, 0.5);
+    
+    transition: all 0.4s;
+  
+    cursor: pointer;
+    
+    overflow: hidden;
+  
+    & + input + & {
+        border-top: 0 solid #C7CCD160;
+    }
+  
+    &:hover {
+        background-color: $main_color !important;
+  
+        color: rgba(0, 0, 0, 0.5);;
+    }
+}
+
+.book {
+    padding: 50px 0 44px;
+    min-height: 675px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .text {
+        width: 44.22%;
+        margin-left: 55px;
+        &__title {
+            margin-top: 111px;
+
+            &:after {
+                margin: 20px auto;
+            }
+        }
+
+        &__form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        &__input {
+            width: 48.94%;
+            height: 60px;
+            background: #E5E5E5;
+            border-radius: 5px;
+
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: rgba(51, 51, 51, 0.5);
+            padding: 18px 20px 22px;
+
+            margin-bottom: 10px;
+
+            &::placeholder {
+                color: rgba(51, 51, 51, 0.5);
+            }
+        }
+        &__btn {
+            width: 100%;
+            background: $main_color;
+        }
+    }
+
+    .present {
+        position: relative;
+        &__img {
+            margin-right: 75px;
+        }
+
+        &__squer {
+            position: absolute;
+            right: 0;
+            top: 163px;
+            width: 250px;
+            height: 250px;
+            background: transparent;
+            border: 20px solid $main_color;
+            border-radius: 5px;
+        }
+    }
+
+    &__subtext {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+        color: rgba(51, 51, 51, 0.5);
+
+        span {
+            font-weight: 700;
+        }
+
+        a {
+            color: rgba(51, 51, 51, 0.5);
+            font-weight: 700;
+        }
+    }
+}
+

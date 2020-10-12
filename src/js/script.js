@@ -1,3 +1,6 @@
+@@include('./components/_webp.js')
+
 window.addEventListener('DOMContentLoaded', () => {
-    @@include('./components/_webp.js')
+    @@include('./components/_select.js')
+    @@include('./components/_slider.js')
 });

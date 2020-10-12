@@ -1,0 +1,39 @@
+.about {
+    padding-top: 100px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .text {
+        &__title {
+            margin-top: 117px;
+
+            &:after {
+                margin: 16px auto;
+            }
+        }
+    }
+
+    .present {
+        position: relative;
+        &__img {
+            transform: translateY(-50px);
+            margin-right: 75px;
+            width: 575px;
+            object-fit: cover;
+        }
+
+        &__squer {
+            position: absolute;
+            right: 0;
+            top: 113px;
+            width: 250px;
+            height: 250px;
+            background: transparent;
+            border: 20px solid $main_color;
+            border-radius: 5px;
+        }
+    }
+}
