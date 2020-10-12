@@ -45,3 +45,18 @@
 .slick-track {
     display: flex;
 }
+
+.slider-menu {
+    .slick-list {
+        padding: 0 !important;
+    }
+    .slick-track {
+        justify-content: space-between;
+    }
+    /* .slick-slide {
+        margin-right: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+    } */
+}
