@@ -83,4 +83,8 @@ window.addEventListener('DOMContentLoaded', function () {
       $('.prices__slider').slick('goTo', i);
     });
   });
+  $('.slider-photos').slick({
+    slidesToShow: 4,
+    arrows: false
+  });
 });

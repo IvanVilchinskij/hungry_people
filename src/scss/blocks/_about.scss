@@ -1,15 +1,15 @@
 .about {
-    padding-top: 100px;
+    padding: 100px 0;
 
     .container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     .text {
+        width: 600 / 1280 *100%;
         &__title {
-            margin-top: 117px;
-
             &:after {
                 margin: 16px auto;
             }
@@ -19,16 +19,16 @@
     .present {
         position: relative;
         &__img {
-            transform: translateY(-50px);
-            margin-right: 75px;
-            width: 575px;
+            margin-right: 125px;
             object-fit: cover;
+            box-shadow: (0px 0px 50px rgba(0, 0, 0, 0.5));
         }
 
         &__squer {
             position: absolute;
             right: 0;
-            top: 113px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 250px;
             height: 250px;
             background: transparent;

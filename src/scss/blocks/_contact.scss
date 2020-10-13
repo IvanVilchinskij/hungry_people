@@ -1,0 +1,138 @@
+.contact {
+    padding: 100px 0;
+
+    &__title {
+        &::after {
+            margin: 16px auto;
+        }
+    }
+
+    &__subtitle {
+        width: 565 / 1280 *100%;
+        margin-bottom: 50px;
+    }
+
+    .contact-form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &__input {
+            width: 420 / 1280 * 100%;
+            height: 60px;
+            background: #E5E5E5;
+            border-radius: 5px;
+
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: rgba(51, 51, 51, 0.5);
+            padding: 18px 20px 22px;
+
+            margin-bottom: 10px;
+
+            &::placeholder {
+                color: rgba(51, 51, 51, 0.5);
+            }
+        }
+
+        &__text {
+            width: 100%;
+            height: 120px;
+            overflow-y: scroll;
+            resize: none;
+
+            background: #E5E5E5;
+            border-radius: 5px;
+            padding: 18px 10px 22px 20px;
+
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+
+            color: rgba(51, 51, 51, 0.5);
+
+            margin-bottom: 10px;
+
+            &::-webkit-scrollbar {
+                width: 10px; /* ширина для вертикального скролла */
+                height: 8px; /* высота для горизонтального скролла */
+                background-color: #E5E5E5;
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar-thumb {
+                width: 6px;
+                background-color: rgba(51, 51, 51, 0.5);
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar-button:vertical:start:decrement {
+                display: none;
+            }
+            &::-webkit-scrollbar-button:vertical:end:increment {
+                display: none;
+            }
+
+            &::placeholder {
+                color: rgba(51, 51, 51, 0.5);
+            }
+        }
+
+        .info {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__block {
+                display: flex;
+            }
+
+            &__icon {
+                margin-right: 7px;
+                svg {
+                    width: 10px;
+                    height: 10px;
+
+                    fill: $main_color;
+                }
+
+                &--xl {
+                    svg {
+                        width: 13px;
+                        height: 13px;
+                    }
+                }
+                
+            }
+
+            &__text {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 12px;
+                color: rgba(51, 51, 51, 0.5);
+                
+
+                &:last-child {
+                    margin-right: 7px;
+                }
+
+                a {
+                    border-bottom: 1px solid transparent;
+                    color: rgba(51, 51, 51, 0.5);
+                    transition: all .2s ease-out;
+
+                    &:hover {
+                        border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+                        transition: all .4s ease-out;
+                    }
+                }
+
+            }
+        }
+
+        &__btn {
+            width: 50%;
+            background: $main_color;
+        }
+    }
+}

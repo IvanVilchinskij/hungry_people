@@ -1,0 +1,16 @@
+.photos {
+    .slider-photos {
+        &__item {
+            img {
+                display: block;
+                width: 100%;
+                object-fit: contain;
+                margin: 0 auto;
+            }
+        }
+
+        .slick-slide {
+            width: 25% !important;
+        }
+    }
+}

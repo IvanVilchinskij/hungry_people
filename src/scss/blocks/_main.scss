@@ -25,7 +25,8 @@
             align-items: center;
             width: 25%;
             height: 100px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);     
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);   
+            user-select: none;  
 
             a {
                 font-weight: 700;
@@ -89,18 +90,19 @@
     .body {
         position: relative;
         margin-top: 225px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         &__left {
-            position: absolute;
             font-weight: 700;
             font-size: 12px;
             line-height: 12px;
-            text-align: center;
             color: #FFFFFF;
-            transform-origin: left top;
-            height: 60px;
-            width: 360px;
-            transform: rotate(-90deg) translateX(-90%);
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            width: 60px;
+            display: flex;
         }
 
         &__center {
@@ -147,9 +149,7 @@
         }
 
         &__right {
-            position: absolute;
-            right: 0;
-            top: 12px;
+
             display: flex;
             flex-direction: column;
         }

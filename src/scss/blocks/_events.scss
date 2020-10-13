@@ -1,0 +1,121 @@
+.events {
+    background: url('../img/events/events-bg.jpg') center center/cover no-repeat;
+    min-height: 675px;
+
+    .container {
+        position: relative;
+    }
+
+    .divider {
+        position: absolute;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(-50%);
+
+        &--left {
+            left: 295 / 1440 * 100%;
+        }
+
+        &--center {
+            left: 50%;
+        }
+
+        &--right {
+            right: 295 / 1440 * 100%;
+        }
+    }
+
+    &__uptitle {
+        padding-top: 43px;
+        margin-bottom: 43px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 44px;
+    }
+
+    .event {
+        position: relative;
+
+        &__squer {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 250px;
+            height: 250px;
+            background: transparent;
+            border: 20px solid $main_color;
+            border-radius: 5px;
+            z-index: 30;
+
+            &--left {
+                left: 0;
+            }
+
+            &--right {
+                right: 0;
+            }
+        }
+
+        &__img {
+            z-index: 3;
+            position: relative;
+            margin-left: 125px;
+
+            img {
+                box-shadow: (0px 0px 50px rgba(0, 0, 0, 0.5));
+            }
+
+            &--right {
+                margin-left: 0;
+                margin-right: 125px;
+            }
+        }
+
+        &__title {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 30;
+            width: 80px;
+            height: 475px;
+            background: #000000;
+            border-radius: 0px 5px 5px 0px;
+            padding: 16px 0;
+
+            writing-mode: vertical-rl;
+            font-family: 'Banny';
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 12px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+
+            &--right {
+                justify-content: flex-end;
+                left: 0;
+            }
+        }
+    }
+
+    &__subtext {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+
+        color: rgba(255, 255, 255, 0.5);
+        padding-bottom: 44px;
+
+        a {
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}
