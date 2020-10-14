@@ -66,25 +66,64 @@ window.addEventListener('DOMContentLoaded', function () {
     initialSlide: 1,
     autoplay: false,
     autoplaySpeed: 5000,
-    fade: true
+    fade: true,
+    cssEase: 'ease-out',
+    touchThreshold: 12,
+    adaptiveHeight: true
   });
   $('.prices__slider').slick({
     speed: 500,
     arrows: false,
     fade: true,
-    swipe: false
+    swipe: false,
+    cssEase: 'ease-out',
+    waitForAnimate: false
   });
   $('.slider-menu').slick({
     slidesToShow: 3,
-    centerMode: true
+    centerMode: true,
+    responsive: [{
+      breakpoint: 1199,
+      settings: {
+        slidesToShow: 1,
+        infinite: false,
+        arrows: false,
+        dots: true,
+        touchThreshold: 12
+      }
+    }]
   });
   document.querySelectorAll('.tabs__item').forEach(function (item, i) {
     item.addEventListener('click', function () {
       $('.prices__slider').slick('goTo', i);
+      toggleClass(i);
     });
   });
+
+  function toggleClass() {
+    var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    document.querySelectorAll('.tabs__item').forEach(function (item) {
+      item.classList.remove('active');
+    });
+    document.querySelectorAll('.tabs__item')[i].classList.add('active');
+  }
+
+  toggleClass();
   $('.slider-photos').slick({
     slidesToShow: 4,
     arrows: false
+  });
+  var $menu = $('.header');
+  var $heightMain = $('.main').height();
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > $heightMain + 200 && $menu.hasClass('default')) {
+      $menu.fadeOut('swing', function () {
+        $(this).removeClass('default').addClass('fixed').fadeIn('swing');
+      });
+    } else if ($(window).scrollTop() <= $heightMain + 200 && $menu.hasClass("fixed")) {
+      $menu.fadeOut('fast', function () {
+        $(this).removeClass("fixed").addClass("default").fadeIn('fast');
+      });
+    }
   });
 });

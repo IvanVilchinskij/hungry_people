@@ -1,6 +1,14 @@
 .menu {
     padding: 100px 0 70px;
 
+    @media (max-width: 1199px) {
+        padding: 70px 0 40px;
+    }
+
+    @media (max-width: 991px){
+        padding: 50px 0 20px;
+    }
+
     .text {
         &__title {
             &:after{
@@ -12,6 +20,11 @@
         &__subtitle {
             width: 44.2%;
             margin-bottom: 50px;
+            @media (max-width: 1199px){
+                width: 70%;
+                margin-bottom: 30px;
+            }
+
         }
     }
 
@@ -45,6 +58,10 @@
             &:hover {
                 color: $main_color;
             }
+
+            &.active {
+                color: $main_color;
+            }
         }
     }
 
@@ -52,6 +69,10 @@
         &__item {
             margin: 0 auto 30px;
             max-width: 380px;
+
+            @media (max-width: 1199px) {
+                width: 100%;
+            }
         }
 
         &__header {
@@ -62,6 +83,15 @@
             font-size: 18px;
             line-height: 18px;
             color: #333333;
+
+            @media (max-width: 1280px) {
+                font-size: 16px;
+            }
+
+            @media (max-width: 1199px) {
+                display: flex;
+                justify-content: center;
+            }
         }
 
         &__title {
@@ -73,6 +103,10 @@
             font-size: 12px;
             line-height: 18px;
             color: rgba(51, 51, 51, 0.5);
+            @media (max-width: 1199px) {
+                padding-left: 2.2rem;
+            }
+            
         }
     }
 
