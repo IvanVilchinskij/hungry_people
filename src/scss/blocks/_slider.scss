@@ -21,6 +21,8 @@
             margin-top: 20px;
             padding-bottom: 20px;
         }
+        @media (max-width: 767px) {
+        }
         
 
        li {
@@ -50,6 +52,9 @@
     overflow: hidden;
     position: relative;
     z-index: 3;
+    @media (max-width: 767px) {
+        height: auto;
+    }
 }
 
 .slick-track {

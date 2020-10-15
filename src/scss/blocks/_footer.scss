@@ -4,11 +4,46 @@
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
 
     @media (max-width: 991px) {
         padding: 22px 0;
     }
 
+    &__icons {
+        display: none;
+
+        @media (max-width: 991px) {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            width: 30%;  
+        }
+    }
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 100%;
+        transition: all .4s;
+
+        &:hover {
+            border: 1px solid $main_color;
+
+            svg {
+                fill: $main_color;
+            }
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+    }
     .copyr {
         font-weight: 400;
         font-size: 12px;

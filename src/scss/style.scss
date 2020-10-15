@@ -39,8 +39,27 @@ body {
     }
 }
 
+::-webkit-scrollbar {
+    width: 8px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #333;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $main_color;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-button:vertical:start:decrement {
+    display: none;
+}
+::-webkit-scrollbar-button:vertical:end:increment {
+    display: none;
+}
+
+
 // Blocks
 
+@import 'blocks/perspective';
+@import 'blocks/header';
 @import 'blocks/main';
 @import 'blocks/titles';
 @import 'blocks/btn';

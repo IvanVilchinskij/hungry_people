@@ -1,0 +1,229 @@
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+    top: 0;
+    left: 0;
+
+    @media (max-width: 767px) {
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px 0;
+        height: 70px;
+        background: rgba(0, 0, 0, .8);
+    }
+
+    &__title {
+        display: none;
+        @media (max-width: 767px) {
+            display: block;
+        }
+
+        font-family: 'Banny';
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 133%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+    }
+
+    &__icon {
+        display: none;
+        @media (max-width: 767px) {
+            display: block;
+        }
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        svg {
+            fill: $main_color;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &.fixed {
+        position: fixed;
+        z-index: 50;
+        background: rgba(0, 0, 0, .8);
+
+        .nav {
+            @media (max-width: 991px) {
+                padding: 0 40px;
+            }
+
+            &__item {
+                border: none;
+                @media (max-width: 1199px) {
+                    height: 50px;
+                }
+                
+            }
+
+            &__icon {
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    top: 50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    stroke: black;
+
+                    @media (max-width: 1199px) {
+                        width: 70px;
+                        height: 70px;
+                        top: 15px;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+
+    &::before, &::after {
+        content: '';
+        background-color: #fff;
+        width: 60%;
+        position: absolute;
+        height: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .5s;
+    }
+
+    &::before {
+        top: 15px;
+
+    }
+
+    &::after {
+        bottom: 15px;
+
+    }
+
+    span {
+        position: absolute;
+        background-color: #fff;
+        left: 50%;
+        width: 60%;
+        height: 2px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .3s;
+    }
+
+    
+
+    @media (max-width: 767px) {
+        display: block;
+        width: 45px;
+        height: 45px;
+        background: $main_color;
+        border-radius: 100%;
+    }
+
+    &.active::before {         
+        transform: rotate(45deg); 
+        top: 9px;       
+    }
+
+    &.active::after {         
+        transform: rotate(-45deg);
+        bottom: 9px;        
+    }
+
+    &.active {
+        span {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+    }
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    padding: 0 80px;
+    margin: 0 auto;
+
+    @media (max-width: 991px) {
+        padding: 10px 40px 0;     
+    }
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+
+
+    &__list {
+        display: flex;
+        width: 532 / 1280 * 100%;
+
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 100px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);   
+        user-select: none;  
+
+        a {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;   
+            color: #FFFFFF;
+            border-bottom: 1px solid transparent;
+            transition: all .4s;
+            
+
+            &:hover {
+                color: $main_color;
+                border-bottom: 1px solid $main_color;
+                
+            }
+        }
+
+        @media (max-width: 991px) {
+            height: 50px;     
+        }
+    }
+
+    &__icon {
+        width: 150 / 1280 * 100%;
+        position: relative;
+
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 25px;
+            transform: translateX(-50%);
+            width: 100%;
+            fill: $main_color;
+
+            @media (max-width: 991px) {
+                height: 75px;
+                top: 12.5px;       
+            }
+        }
+    }
+}

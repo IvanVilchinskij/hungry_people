@@ -12,7 +12,7 @@
     font-family: 'Banny', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 36px;
-    line-height: 48px;
+    line-height: 133%;
     text-align: center;
     text-transform: uppercase;
     color: #000000;
@@ -36,7 +36,7 @@
 .subtitle {
     font-weight: 700;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 156%;
     text-align: center;
     color: #000000;
 
@@ -47,12 +47,16 @@
     @media (max-width: 1280px) {
         @include adaptiv-font(18, 16);
     }
+
+    @media (max-width: 991px) {
+        margin-bottom: 15px;
+    }
 }
 
 .descr {
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 170%;
     text-align: center;
     color: #000000;
 

@@ -3,5 +3,5 @@
 window.addEventListener('DOMContentLoaded', () => {
     @@include('./components/_select.js')
     @@include('./components/_slider.js')
-    @@include('./components/scrolls/_menu.js')
+    @@include('./components/scrolls/_headMenu.js')
 });
