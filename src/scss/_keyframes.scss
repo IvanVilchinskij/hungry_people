@@ -1,0 +1,22 @@
+@keyframes main-icon{
+    0%{
+        transform-origin: 50% 100%;
+        transform: scale(.3);
+    }
+    10%{
+        transform-origin: 50% 100%;
+        transform:  scale(1);
+    }
+    50%{
+        transform-origin: 50% 100%;
+        transform: rotateZ(560deg);
+    }
+    60%{
+        transform-origin: 50% 100%;
+        transform: rotateZ(-470deg);
+    }
+    100%{
+        transform-origin: 50% 100%;
+        transform: rotateZ(0);
+    }
+}

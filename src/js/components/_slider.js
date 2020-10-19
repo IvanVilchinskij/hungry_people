@@ -60,6 +60,7 @@ toggleClass();
 $('.slider-photos').slick({
     slidesToShow: 4,
     arrows: false,
+    waitForAnimate: false,
     responsive: [
         {
             breakpoint: 575,

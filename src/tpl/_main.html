@@ -1,14 +1,25 @@
 <div id="home" class="main">
     <div class="container">
         <header class="header default">
+            <div class="header__title">hungry people</div>
+            <div class="header__icon">
+                <svg>
+                    <use xlink:href="img/icons/icons.svg#wheel"></use>
+                </svg>
+            </div>
             <nav class="nav">
+                <div class="burger">
+                    <div class="line line--1"></div>
+                    <div class="line line--2"></div>
+                    <div class="line line--3"></div>
+                </div> 
                 <ul class="nav__list nav__list--left">
                     <li class="nav__item"><a href="#home">HOME</a></li>
                     <li class="nav__item"><a href="#about">ABOUT</a></li>
                     <li class="nav__item"><a href="#team">TEAM</a></li>
                     <li class="nav__item"><a href="#book">BOOKING</a></li>
                 </ul>
-                <div class="nav__icon">
+                <div class="nav__icon anim-item">
                     <svg>
                         <use xlink:href="img/icons/icons.svg#wheel"></use>
                     </svg>
@@ -20,13 +31,8 @@
                     <li class="nav__item"><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
-            <div class="header__title">hungry people</div>
-            <div class="header__icon">
-                <svg>
-                    <use xlink:href="img/icons/icons.svg#wheel"></use>
-                </svg>
-            </div>
-            <div id="showMenu" class="burger"><span></span></div>    
+            
+               
         </header>
         <div class="divider divider--left"></div>
         <div class="divider divider--center"></div>
@@ -39,8 +45,8 @@
                 <div class="body__uptitle uptitle">RESTAURANT</div>
                 <h1 class="body__title title">hungry people</h1>
                 <div class="body__btns">
-                    <button class="body__btn body__btn--left btn">BOOK TABLE</button>
-                    <button class="body__btn body__btn--right btn">EXPLORE</button>
+                    <a href="#book"><button class="body__btn body__btn--left btn">BOOK TABLE</button></a>
+                    <a href="#map"><button class="body__btn body__btn--right btn">EXPLORE</button></a>
                 </div>
             </div>
             <div class="body__right">
@@ -68,13 +74,16 @@
             </div>
         </div>
         <div class="btn-wrapper">
-            <div class="btn-down">
-                <div class="btn-down__round">
-                    <svg>
-                        <use xlink:href="img/icons/icons.svg#check"></use>
-                    </svg>
+            <a href="#about">
+                <div class="btn-down">
+                    <div class="btn-down__round">
+                        <svg>
+                            <use xlink:href="img/icons/icons.svg#check"></use>
+                        </svg>
+                    </div>
                 </div>
-            </div>
+            </a>
+            
         </div>
         
         

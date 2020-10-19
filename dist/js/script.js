@@ -112,6 +112,7 @@ window.addEventListener('DOMContentLoaded', function () {
   $('.slider-photos').slick({
     slidesToShow: 4,
     arrows: false,
+    waitForAnimate: false,
     responsive: [{
       breakpoint: 575,
       settings: {
@@ -148,4 +149,70 @@ window.addEventListener('DOMContentLoaded', function () {
     });
     return false;
   });
+  var menuBtn = document.querySelector('.burger'),
+      nav = document.querySelector('nav'),
+      lineOne = document.querySelector('.line--1'),
+      lineTwo = document.querySelector('.line--2'),
+      lineThree = document.querySelector('.line--3'),
+      links = document.querySelectorAll('.nav__item a');
+  menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('active');
+    nav.classList.toggle('nav-open');
+    lineOne.classList.toggle('line-cross');
+    lineTwo.classList.toggle('line-fade-out');
+    lineThree.classList.toggle('line-cross');
+    document.querySelector('body').classList.toggle('no-scroll');
+  });
+  links.forEach(function (item) {
+    item.addEventListener('click', function () {
+      if (menuBtn.classList.contains('active')) {
+        menuBtn.classList.toggle('active');
+        nav.classList.toggle('nav-open');
+        lineOne.classList.toggle('line-cross');
+        lineTwo.classList.toggle('line-fade-out');
+        lineThree.classList.toggle('line-cross');
+        document.querySelector('body').classList.toggle('no-scroll');
+      }
+    });
+  });
+  var animItems = document.querySelectorAll('.anim-item');
+
+  if (animItems.length > 0) {
+    var animOnScroll = function animOnScroll() {
+      for (var i = 0; i < animItems.length; i++) {
+        var animItem = animItems[i],
+            animItemHeight = animItem.offsetHeight,
+            animItemOffset = offset(animItem).top,
+            animStart = 3;
+        var animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+        if (animItemHeight > window.innerHeight) {
+          animItemPoint = window.innerHeight - window.innerHeight / animStart;
+        }
+
+        if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight) {
+          animItem.classList.add('anim-active');
+        } else {
+          if (animItem.classList.contains('anim-hide')) {
+            animItem.classList.remove('anim-active');
+          }
+        }
+      }
+    };
+
+    var offset = function offset(el) {
+      var rect = el.getBoundingClientRect(),
+          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return {
+        top: rect.top + scrollTop,
+        left: rect.left + scrollLeft
+      };
+    };
+
+    window.addEventListener('scroll', animOnScroll);
+    setTimeout(function () {
+      animOnScroll();
+    }, 500);
+  }
 });
