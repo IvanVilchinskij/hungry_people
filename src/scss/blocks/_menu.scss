@@ -34,6 +34,9 @@
             @media (max-width: 767px) {
                 width: 95%;
             }
+            @media (max-width: 575px) {
+                width: 100%;
+            }
 
         }
     }
@@ -42,6 +45,10 @@
         display: flex;
         justify-content: center;
         margin-bottom: 51px;
+
+        @media (max-width: 991px) {
+            margin-bottom: 30px;
+        }
 
         &__item {
             width: 120px;
@@ -60,6 +67,10 @@
             user-select: none;
 
             transition: all .4s;
+
+            @media (max-width: 575px) {
+                font-size: 10px;
+            }
 
             &:first-child {
                 border-left: none;
@@ -99,6 +110,9 @@
 
             @media (max-width: 1280px) {
                 font-size: 16px;
+            }
+            @media (max-width: 575px) {
+                font-size: 14px;
             }
 
             @media (max-width: 1199px) {

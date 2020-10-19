@@ -2,6 +2,10 @@
     position: relative;
     width: 48.94%;
     height: 60px;
+    @media (max-width: 575px) {
+        width: 100%;
+        margin-bottom: 10px;
+    }
   
     &[data-state="active"] {
         .text__select-title {
@@ -151,10 +155,10 @@
     }
 
     @media (max-width: 991px){
-        padding: 50px 0 19px;
+        padding: 50px 0 29px;
     }
     @media (max-width: 767px) {
-        padding: 30px 0 19px;
+        padding: 30px 0 29px;
     }
 
     &__wrapper {
@@ -181,7 +185,7 @@
             &:after {
                 margin: 20px auto;
                 @media (max-width: 991px) {
-                    margin: 12px auto;
+                    margin: 5px auto 12px;
                 }
             }
         }
@@ -209,6 +213,9 @@
 
             &::placeholder {
                 color: rgba(51, 51, 51, 0.5);
+            }
+            @media (max-width: 575px) {
+                width: 100%;
             }
         }
         &__btn {

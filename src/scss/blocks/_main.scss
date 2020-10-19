@@ -1,10 +1,10 @@
 .main {
-    position: relative;
+    /* position: relative; */
     background: url('../img/main/main-bg.jpg') center center/cover no-repeat;
 
-    .container {
+    /* .container {
         position: relative;
-    }
+    } */
 
     .divider {
         position: absolute;
@@ -63,6 +63,9 @@
         @media (max-width: 767px) {
             padding-top: 160px;
         }
+        @media (max-width: 575px) {
+            padding-top: 100px;
+        }
 
         &__left {
             font-weight: 700;
@@ -101,12 +104,14 @@
             line-height: 98 / 96 * 100%;
             color: #FFFFFF;
             white-space: nowrap;
+            
 
             &:after {
                 margin: 30px auto;
                 @media (max-width: 767px) {
                     margin: 15px auto;
                 }
+                
             }
 
             @media (max-width: 1280px) {
@@ -119,6 +124,9 @@
         &__btns {
             display: flex;
             justify-content: center;
+            @media (max-width: 575px) {
+                flex-direction: column;
+            }
         }
 
         &__btn {
@@ -128,13 +136,22 @@
             @media (max-width: 767px) {
                 height: 45px;
             }
+            @media (max-width: 575px) {
+                width: 100%;
+            }
 
             &--left {
                 margin-right: 10px;
+                @media (max-width: 575px) {
+                    margin: 0 0 10px;
+                }
             }
 
             &--right {
                 margin-left: 10px;
+                @media (max-width: 575px) {
+                    margin: 0;
+                }
             }
 
             &:hover {

@@ -59,5 +59,18 @@ toggleClass();
 
 $('.slider-photos').slick({
     slidesToShow: 4,
-    arrows: false
+    arrows: false,
+    responsive: [
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+                infinite: true,
+                arrows: false,
+                dots: false,
+                touchThreshold: 12
+            }
+        }
+        
+    ]
 });

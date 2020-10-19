@@ -19,6 +19,9 @@
             margin-bottom: 10px;
             width: 30%;  
         }
+        @media (max-width: 575px) {
+            width: 50%;
+        }
     }
     &__icon {
         display: flex;

@@ -24,6 +24,10 @@
         &--right {
             right: 295 / 1440 * 100%;
         }
+
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 
     &__uptitle {
@@ -35,10 +39,7 @@
             margin-bottom: 28px;
         }
 
-        @media (max-width: 991px){
-            padding-top: 18px;
-            margin-bottom: 18px;
-        }
+        
     }
 
     
@@ -102,7 +103,7 @@
                 width: 65px;
                 margin: 16px auto;
                 @media (max-width: 991px) {
-                    margin: 8px auto;
+                    margin: 5px auto;
                 }
             }
         }

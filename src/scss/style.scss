@@ -37,12 +37,16 @@ body {
     @media (max-width: 991px) {
         padding: 0 40px;             
     }
+    @media (max-width: 575px) {
+        padding: 0 20px;    
+    }
 }
 
 ::-webkit-scrollbar {
     width: 8px; /* ширина для вертикального скролла */
     height: 8px; /* высота для горизонтального скролла */
     background-color: #333;
+    
 }
 ::-webkit-scrollbar-thumb {
     background-color: $main_color;

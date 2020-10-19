@@ -1,15 +1,4 @@
 
-/**
- * menu.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2013, Codrops
- * http://www.codrops.com
- */
-
 function scrollY() {
     return window.pageYOffset || docElem.scrollTop;
 }
@@ -21,30 +10,20 @@ function mobilecheck() {
     return check;
 }
 
-var docElem = window.document.documentElement,
-    // support transitions
-    support = Modernizr.csstransitions,
-    // transition end event name
-    transEndEventNames = {
-        'WebkitTransition': 'webkitTransitionEnd',
-        'MozTransition': 'transitionend',
-        'OTransition': 'oTransitionEnd',
-        'msTransition': 'MSTransitionEnd',
-        'transition': 'transitionend'
-    },
-    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+let docElem = window.document.documentElement,
     docscroll = 0,
     // click event (if mobile use touchstart)
     clickevent = mobilecheck() ? 'touchstart' : 'click';
 
 function init() {
-    var showMenu = document.getElementById('showMenu'),
+    let showMenu = document.getElementById('showMenu'),
         perspectiveWrapper = document.getElementById('perspective'),
         container = perspectiveWrapper.querySelector( '.content' ),
-        contentWrapper = container.querySelector( '.wrapper' );
+        contentWrapper = container.querySelector( '.wrapper' ),
+        links = document.querySelectorAll('.outer-link');
 
-    showMenu.addEventListener( clickevent, function( ev ) {
-        ev.stopPropagation();
+    showMenu.addEventListener( 'click', function( ev ) {
+        /* ev.stopPropagation(); */
         ev.preventDefault();
         docscroll = scrollY();
         // change top of contentWrapper
@@ -53,35 +32,38 @@ function init() {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         // add modalview class
         perspectiveWrapper.classList.add('modalview');
+        container.classList.add('transform');
         // animate..
         setTimeout( function() { perspectiveWrapper.classList.add('animate'); }, 25 );
     });
 
-    container.addEventListener( clickevent, function( ev ) {
-        /* container.classList.add('transform'); */
+    container.addEventListener( 'click', function( ev ) {
         if( perspectiveWrapper.classList.contains('animate')) {
-            var onEndTransFn = function( ev ) {
-                if( support && ( ev.target.className !== 'content' || ev.propertyName.indexOf( 'transform' ) == -1 ) ) return;
-                this.removeEventListener( transEndEventName, onEndTransFn );
+            perspectiveWrapper.classList.remove('modalview');
+            container.classList.remove('transform');
+            // mac chrome issue:
+            document.body.scrollTop = document.documentElement.scrollTop = docscroll;
+            // change top of contentWrapper
+            contentWrapper.style.top = '0px';
 
+            perspectiveWrapper.classList.remove('animate');
+        }
+    });
+
+    links.forEach(item => {
+        item.addEventListener( 'click', function( ev ) {
+            if( perspectiveWrapper.classList.contains('animate')) { 
                 perspectiveWrapper.classList.remove('modalview');
                 container.classList.remove('transform');
                 // mac chrome issue:
                 document.body.scrollTop = document.documentElement.scrollTop = docscroll;
                 // change top of contentWrapper
                 contentWrapper.style.top = '0px';
-            };
-            if( support ) {
-                perspectiveWrapper.addEventListener( transEndEventName, onEndTransFn );
-            }
-            else {
-                onEndTransFn.call();
-            }
-            perspectiveWrapper.classList.remove('animate');
-        }
+                perspectiveWrapper.classList.remove('animate');
+            } 
+        });
     });
 
-    perspectiveWrapper.addEventListener( clickevent, function( ev ) { return false; } );
 }
 
 init();

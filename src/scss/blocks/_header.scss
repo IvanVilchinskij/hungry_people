@@ -14,6 +14,9 @@
         height: 70px;
         background: rgba(0, 0, 0, .8);
     }
+    @media (max-width: 575px) {
+        padding: 10px 20px 0;  
+    }
 
     &__title {
         display: none;
@@ -44,6 +47,11 @@
             fill: $main_color;
             width: 100px;
             height: 100px;
+            
+        }
+
+        @media (max-width: 575px) {
+            display: none;
         }
     }
 
