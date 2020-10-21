@@ -177,42 +177,44 @@ window.addEventListener('DOMContentLoaded', function () {
   });
   var animItems = document.querySelectorAll('.anim-item');
 
-  if (animItems.length > 0) {
-    var animOnScroll = function animOnScroll() {
-      for (var i = 0; i < animItems.length; i++) {
-        var animItem = animItems[i],
-            animItemHeight = animItem.offsetHeight,
-            animItemOffset = offset(animItem).top,
-            animStart = 3;
-        var animItemPoint = window.innerHeight - animItemHeight / animStart;
+  if (document.documentElement.clientWidth > 767) {
+    if (animItems.length > 0) {
+      var animOnScroll = function animOnScroll() {
+        for (var i = 0; i < animItems.length; i++) {
+          var animItem = animItems[i],
+              animItemHeight = animItem.offsetHeight,
+              animItemOffset = offset(animItem).top,
+              animStart = 2;
+          var animItemPoint = window.innerHeight - animItemHeight / animStart;
 
-        if (animItemHeight > window.innerHeight) {
-          animItemPoint = window.innerHeight - window.innerHeight / animStart;
-        }
+          if (animItemHeight > window.innerHeight) {
+            animItemPoint = window.innerHeight - window.innerHeight / animStart;
+          }
 
-        if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight) {
-          animItem.classList.add('anim-active');
-        } else {
-          if (animItem.classList.contains('anim-hide')) {
-            animItem.classList.remove('anim-active');
+          if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight) {
+            animItem.classList.add('anim-active');
+          } else {
+            if (animItem.classList.contains('anim-hide')) {
+              animItem.classList.remove('anim-active');
+            }
           }
         }
-      }
-    };
-
-    var offset = function offset(el) {
-      var rect = el.getBoundingClientRect(),
-          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      return {
-        top: rect.top + scrollTop,
-        left: rect.left + scrollLeft
       };
-    };
 
-    window.addEventListener('scroll', animOnScroll);
-    setTimeout(function () {
-      animOnScroll();
-    }, 500);
+      var offset = function offset(el) {
+        var rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return {
+          top: rect.top + scrollTop,
+          left: rect.left + scrollLeft
+        };
+      };
+
+      window.addEventListener('scroll', animOnScroll);
+      setTimeout(function () {
+        animOnScroll();
+      }, 500);
+    }
   }
 });
