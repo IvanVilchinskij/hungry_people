@@ -18,6 +18,9 @@
             height: 100%;
             transition: height .4s ease-in-out 1.4s;
         }
+        &.default {
+            height: 100%;
+        }
 
         &--left {
             left: 295 / 1440 * 100%;
@@ -79,6 +82,11 @@
                 transition: opacity .7s ease-in-out .2s, left .7s ease-in-out .2s;
             }
 
+            &.default {
+                opacity: 1;
+                left: 0;
+            }
+
             @media (max-width: 767px) {
                 opacity: 1;
                 left: 0;
@@ -96,6 +104,10 @@
                 opacity: 1;
                 right: 0;
                 transition: opacity .7s ease-in-out .2s, right .7s ease-in-out .2s;
+            }
+            &.default {
+                opacity: 1;
+                right: 0;
             }
 
             @media (max-width: 767px) {
@@ -152,6 +164,10 @@
             &.anim-active {
                 transform: translateY(-50%) perspective(400px) rotate3d(0, 1, 0, 0);
                 transition: transform .4s 1s;
+            }
+
+            &.default {
+                transform: translateY(-50%);
             }
         }
 

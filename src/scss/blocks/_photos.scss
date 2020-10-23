@@ -7,6 +7,10 @@
             opacity: 1;
             transition: opacity .8s .2s;
         }
+
+        &.default {
+            opacity: 1;
+        }
         &__item {
 
             img {

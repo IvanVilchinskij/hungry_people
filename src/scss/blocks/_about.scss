@@ -31,6 +31,12 @@
             transform: perspective(300px) translate3d(0, 0, 0);
             transition: transform .7s ease-in-out 0.9s, opacity .7s ease-in-out 0.9s;
         }
+
+        &.default {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
         &__title {
             &:after {
                 margin: 16px auto;
@@ -68,6 +74,11 @@
             transition: opacity .7s ease-in-out .2s, right .7s ease-in-out .2s;
         }
 
+        &.default {
+            opacity: 1;
+            right: 0;
+        }
+
         @media (max-width: 991px) {
             width: calc(475 / 1280 * 100% - 10%);
             margin-right: calc(125 / 1280 * 100% - 2.5%);
@@ -98,6 +109,10 @@
             &.anim-active {
                 transform: translateY(-50%) perspective(400px) rotate3d(0, 1, 0, 0);
                 transition: transform .4s 1.7s;
+            }
+
+            &.default {
+                transform: translateY(-50%);
             }
 
             @media (max-width: 1199px) {

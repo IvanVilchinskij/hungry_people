@@ -23,6 +23,10 @@
             display: none;
         }
 
+        &.default {
+            height: 100%;
+        }
+
         &--left {
             left: 295 / 1440 * 100%;
 
@@ -46,6 +50,16 @@
                 @media (max-width: 991px) {
                     height: 428px;
                     transition: height .3s ease-in-out 4.8s;
+                }
+            }
+
+            &.default {
+                height: 454px;
+                @media (max-width: 1199px) {
+                    height: 404px;
+                }
+                @media (max-width: 991px) {
+                    height: 428px;
                 }
             }
 
@@ -108,6 +122,11 @@
                 animation: body-parts .4s ease-in-out 5s forwards;
             }
 
+            &.default {
+                opacity: 1;
+                top: 0;
+            }
+
             @media (max-width: 991px) {
                 writing-mode: horizontal-tb;
                 transform: rotate(0);
@@ -160,6 +179,10 @@
                     opacity: 1;
                     transition: opacity 1s 4.8s;
                 }
+            }
+
+            &.default {
+                opacity: 1;
             }
             
 
@@ -222,6 +245,12 @@
                     opacity: 1;
                     transition: background-color .4s, border .4s, left .6s ease-in-out 5.2s, opacity .6s ease-in-out 5.2s;
                 }
+
+                &.default {
+                    left: 0;
+                    opacity: 1;
+                    transition: background-color .4s;
+                }
                 
             }
 
@@ -242,6 +271,12 @@
                     opacity: 1;
                     transition: background-color .4s, border .4s, right .6s ease-in-out 5.2s, opacity .6s ease-in-out 5.2s;
                 }
+
+                &.default {
+                    right: 0;
+                    opacity: 1;
+                    transition: background-color .4s;
+                }
             }
 
             &:hover {
@@ -260,6 +295,11 @@
 
             &.anim-active{
                 animation: body-parts .4s ease-in-out 5s forwards;
+            }
+
+            &.default {
+                opacity: 1;
+                top: 0;
             }
 
             @media (max-width: 991px) {
@@ -333,6 +373,14 @@
             &:after {
                 opacity: 1;
                 transition: opacity .05s ease-out 5.15s;
+            }
+        }
+
+        &.default {
+            opacity: 1;
+
+            &:after {
+                opacity: 1;
             }
         }
 

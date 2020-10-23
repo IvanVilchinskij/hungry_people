@@ -4,12 +4,12 @@
             <div class="text anim-item">
                 <h2 class="text__title title">book a table</h2>
                 <form class="text__form">
-                    <input type="text" placeholder="Name" class="text__input">
-                    <input type="email" placeholder="Email" class="text__input">
-                    <input type="tel" placeholder="Phone" class="text__input">
+                    <input type="text" required placeholder="Name" class="text__input">
+                    <input type="email" required placeholder="Email" class="text__input">
+                    <input id="bookPhone" required type="tel" placeholder="Phone" class="text__input">
                     <div class="text__select" data-state="">
                         <div class="text__select-title" data-default="People">People</div>
-                        <div class="text__select-content">
+                        <div id="selectContent1" class="text__select-content">
                             <input id="peopleSelect0" class="text__select-input" type="radio" name="singleSelect"/>
                             <label for="peopleSelect0" class="text__select-label">0</label>
                             <input id="peopleSelect1" class="text__select-input" type="radio" name="singleSelect" />
@@ -26,10 +26,10 @@
                             <label for="peopleSelect6" class="text__select-label">>5</label>
                         </div>
                     </div>
-                    <input type="text" placeholder="Date (mm/dd)" class="text__input">
+                    <input id="bookDate" required type="text" placeholder="Date (mm/dd)" class="text__input">
                     <div class="text__select" data-state="">
                         <div class="text__select-title" data-default="Time">Time</div>
-                        <div class="text__select-content">
+                        <div id="selectContent2" class="text__select-content">
                             <input id="timeSelect0" class="text__select-input" type="radio" name="singleSelect"/>
                             <label for="timeSelect0" class="text__select-label"></label>
                             <input id="timeSelect1" class="text__select-input" type="radio" name="singleSelect" />

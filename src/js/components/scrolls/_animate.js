@@ -16,7 +16,7 @@ if (document.documentElement.clientWidth > 767) {
                     animItemPoint = window.innerHeight - window.innerHeight/animStart;
                 }
     
-                if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+                if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight) && !animItem.classList.contains('default')) {
                     animItem.classList.add('anim-active');
                 } else {
                     if (animItem.classList.contains('anim-hide')) {
@@ -34,8 +34,19 @@ if (document.documentElement.clientWidth > 767) {
         }
         setTimeout(() => {
             animOnScroll();
-        }, 500);
-        
+        }, 500);       
     }
 }
+
+window.addEventListener('resize', () => {
+    if (document.documentElement.clientWidth > 767) {
+        animItems.forEach(item => {
+            item.classList.remove('anim-item');
+            item.classList.remove('anim-active');
+            item.classList.add('default');
+        });
+    }
+});
+
+
 
