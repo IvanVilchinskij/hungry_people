@@ -1,3 +1,5 @@
+/* Sliders */
+
 $('.slider').slick({
     arrows: false,
     dots: true,
@@ -38,14 +40,16 @@ $('.slider-menu').slick({
     ]
 });
 
+const tabs = document.querySelectorAll('.tabs__item');
+
 function toggleClass(i = 0) {
-    document.querySelectorAll('.tabs__item').forEach(item => {
+    tabs.forEach(item => {
         item.classList.remove('active');
     });
-    document.querySelectorAll('.tabs__item')[i].classList.add('active');
+    tabs[i].classList.add('active');
 }
 
-document.querySelectorAll('.tabs__item').forEach((item, i) => {
+tabs.forEach((item, i) => {
     item.addEventListener('click', ()=> {
         $('.prices__slider').slick('goTo', i);
         toggleClass(i);

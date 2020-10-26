@@ -1,3 +1,5 @@
+/* Burger */
+
 function clickBurger({btn, navigation, firstLine, secondLine, thirdLine, navLinks}) {
     const menuBtn = document.querySelector(btn),
           nav = document.querySelector(navigation),

@@ -71,10 +71,10 @@
                     $delay: $var * 0.2 + 0.7;
                     &:nth-child(#{$var}) {                       
                         @if $var==1 {
-                            transition: border-left .4s linear 2.2s;
+                            transition: border-left .4s linear 2.2s, color .4s;
                             animation: tabs-item .4s linear 0.9s forwards;
                         } @else {
-                            transition: border-left .4s linear 2.2s;
+                            transition: border-left .4s linear 2.2s, color .4s;
                             animation: tabs-item .4s linear #{$delay + s} forwards;
                         }                        
                     }
@@ -155,6 +155,7 @@
 
             &:hover {
                 color: $main_color;
+                transition: color .4s;
             }
 
             &.active {

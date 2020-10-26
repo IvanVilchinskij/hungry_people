@@ -1,3 +1,5 @@
+/* Header Menu */
+
 const $menu = $('.header');
 let $heightMain = $('.main').height();
 

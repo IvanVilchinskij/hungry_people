@@ -675,6 +675,22 @@ body {
   transition: background-color .4s, border .4s, left .6s ease-in-out 5.2s, opacity .6s ease-in-out 5.2s;
 }
 
+.main .body__btn a {
+  color: #fff;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .main .body__btn--left {
   margin-right: 10px;
   left: -100%;
@@ -1836,57 +1852,57 @@ body {
 }
 
 .menu .tabs.anim-active .tabs__item:nth-child(1) {
-  -webkit-transition: border-left .4s linear 2.2s;
-  -o-transition: border-left .4s linear 2.2s;
-  transition: border-left .4s linear 2.2s;
+  -webkit-transition: border-left .4s linear 2.2s, color .4s;
+  -o-transition: border-left .4s linear 2.2s, color .4s;
+  transition: border-left .4s linear 2.2s, color .4s;
   -webkit-animation: tabs-item .4s linear 0.9s forwards;
           animation: tabs-item .4s linear 0.9s forwards;
 }
 
 .menu .tabs.anim-active .tabs__item:nth-child(2) {
-  -webkit-transition: border-left .4s linear 2.2s;
-  -o-transition: border-left .4s linear 2.2s;
-  transition: border-left .4s linear 2.2s;
+  -webkit-transition: border-left .4s linear 2.2s, color .4s;
+  -o-transition: border-left .4s linear 2.2s, color .4s;
+  transition: border-left .4s linear 2.2s, color .4s;
   -webkit-animation: tabs-item 0.4s linear 1.1s forwards;
           animation: tabs-item 0.4s linear 1.1s forwards;
 }
 
 .menu .tabs.anim-active .tabs__item:nth-child(3) {
-  -webkit-transition: border-left .4s linear 2.2s;
-  -o-transition: border-left .4s linear 2.2s;
-  transition: border-left .4s linear 2.2s;
+  -webkit-transition: border-left .4s linear 2.2s, color .4s;
+  -o-transition: border-left .4s linear 2.2s, color .4s;
+  transition: border-left .4s linear 2.2s, color .4s;
   -webkit-animation: tabs-item 0.4s linear 1.3s forwards;
           animation: tabs-item 0.4s linear 1.3s forwards;
 }
 
 .menu .tabs.anim-active .tabs__item:nth-child(4) {
-  -webkit-transition: border-left .4s linear 2.2s;
-  -o-transition: border-left .4s linear 2.2s;
-  transition: border-left .4s linear 2.2s;
+  -webkit-transition: border-left .4s linear 2.2s, color .4s;
+  -o-transition: border-left .4s linear 2.2s, color .4s;
+  transition: border-left .4s linear 2.2s, color .4s;
   -webkit-animation: tabs-item 0.4s linear 1.5s forwards;
           animation: tabs-item 0.4s linear 1.5s forwards;
 }
 
 .menu .tabs.anim-active .tabs__item:nth-child(5) {
-  -webkit-transition: border-left .4s linear 2.2s;
-  -o-transition: border-left .4s linear 2.2s;
-  transition: border-left .4s linear 2.2s;
+  -webkit-transition: border-left .4s linear 2.2s, color .4s;
+  -o-transition: border-left .4s linear 2.2s, color .4s;
+  transition: border-left .4s linear 2.2s, color .4s;
   -webkit-animation: tabs-item 0.4s linear 1.7s forwards;
           animation: tabs-item 0.4s linear 1.7s forwards;
 }
 
 .menu .tabs.anim-active .tabs__item:nth-child(6) {
-  -webkit-transition: border-left .4s linear 2.2s;
-  -o-transition: border-left .4s linear 2.2s;
-  transition: border-left .4s linear 2.2s;
+  -webkit-transition: border-left .4s linear 2.2s, color .4s;
+  -o-transition: border-left .4s linear 2.2s, color .4s;
+  transition: border-left .4s linear 2.2s, color .4s;
   -webkit-animation: tabs-item 0.4s linear 1.9s forwards;
           animation: tabs-item 0.4s linear 1.9s forwards;
 }
 
 .menu .tabs.anim-active .tabs__item:nth-child(7) {
-  -webkit-transition: border-left .4s linear 2.2s;
-  -o-transition: border-left .4s linear 2.2s;
-  transition: border-left .4s linear 2.2s;
+  -webkit-transition: border-left .4s linear 2.2s, color .4s;
+  -o-transition: border-left .4s linear 2.2s, color .4s;
+  transition: border-left .4s linear 2.2s, color .4s;
   -webkit-animation: tabs-item 0.4s linear 2.1s forwards;
           animation: tabs-item 0.4s linear 2.1s forwards;
 }
@@ -1981,6 +1997,9 @@ body {
 
 .menu .tabs__item:hover {
   color: #FFD600;
+  -webkit-transition: color .4s;
+  -o-transition: color .4s;
+  transition: color .4s;
 }
 
 .menu .tabs__item.active {
@@ -3241,6 +3260,10 @@ body {
     margin-bottom: 10px;
   }
 
+  .map iframe {
+    height: 300px;
+  }
+
   .footer {
     padding: 22px 0;
   }
@@ -3332,6 +3355,22 @@ body {
 
   .nav__item a {
     font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: none;
+  }
+
+  .nav__item a:hover {
+    border-bottom: none;
   }
 
   .nav__item {

@@ -1,5 +1,6 @@
 "use strict";
 
+/* Webp */
 function testWebP(callback) {
   var webP = new Image();
 
@@ -18,66 +19,36 @@ testWebP(function (support) {
   }
 });
 window.addEventListener('DOMContentLoaded', function () {
-  var selectSingles = document.querySelectorAll('.text__select');
-  var selectSingleTitle1, selectSingleLabels1, selectSingleTitle2, selectSingleLabels2;
-  selectSingles.forEach(function (item, i) {
-    if (i == 0) {
-      selectSingleTitle1 = item.querySelector('.text__select-title');
-      selectSingleLabels1 = item.querySelectorAll('.text__select-label');
-    } else {
-      selectSingleTitle2 = item.querySelector('.text__select-title');
-      selectSingleLabels2 = item.querySelectorAll('.text__select-label');
-    }
-  });
+  /* Selects */
+  var titles = document.querySelectorAll('.text__select');
+  document.body.addEventListener('click', function (e) {
+    var target = e.target,
+        parent = target.parentNode;
 
-  function toggleAndClose(_ref) {
-    var title = _ref.title,
-        lables = _ref.lables,
-        numb = _ref.numb;
-    // Toggle menu
-    title.addEventListener('click', function () {
-      if (numb == 0) {
-        selectSingles[numb + 1].setAttribute('data-state', '');
-      } else {
-        selectSingles[numb - 1].setAttribute('data-state', '');
-      }
-
-      if ('active' === selectSingles[numb].getAttribute('data-state')) {
-        selectSingles[numb].setAttribute('data-state', '');
-      } else {
-        selectSingles[numb].setAttribute('data-state', 'active');
-      }
-    }); // Close when click to option
-
-    for (var i = 0; i < lables.length; i++) {
-      lables[i].addEventListener('click', function (evt) {
-        title.textContent = evt.target.textContent;
-        selectSingles[numb].setAttribute('data-state', '');
+    var deactiveAttr = function deactiveAttr() {
+      titles.forEach(function (item) {
+        item.setAttribute('data-state', '');
       });
+    };
+
+    if (target && parent.classList.contains('text__select')) {
+      if ('active' === parent.getAttribute('data-state')) {
+        parent.setAttribute('data-state', '');
+      } else {
+        deactiveAttr();
+        parent.setAttribute('data-state', 'active');
+      }
+    } else if (target && target.classList.contains('text__select-label')) {
+      parent.previousSibling.previousSibling.textContent = target.textContent;
+      parent.parentNode.setAttribute('data-state', '');
     }
-    /* $(document).mouseup(function (e) {
-        const block = $('#selectContent1');
-        if (!block.is(e.target) && block.has(e.target).length === 0){
-            block.hide();
-        }
-          const block2 = $('#selectContent12');
-        if (!block2.is(e.target) && block2.has(e.target).length === 0){
-            block2.hide();
-        }
-    }); */
 
-  }
+    if (!parent.classList.contains('text__select')) {
+      deactiveAttr();
+    }
+  });
+  /* Sliders */
 
-  toggleAndClose({
-    title: selectSingleTitle1,
-    lables: selectSingleLabels1,
-    numb: 0
-  });
-  toggleAndClose({
-    title: selectSingleTitle2,
-    lables: selectSingleLabels2,
-    numb: 1
-  });
   $('.slider').slick({
     arrows: false,
     dots: true,
@@ -112,16 +83,17 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     }]
   });
+  var tabs = document.querySelectorAll('.tabs__item');
 
   function toggleClass() {
     var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    document.querySelectorAll('.tabs__item').forEach(function (item) {
+    tabs.forEach(function (item) {
       item.classList.remove('active');
     });
-    document.querySelectorAll('.tabs__item')[i].classList.add('active');
+    tabs[i].classList.add('active');
   }
 
-  document.querySelectorAll('.tabs__item').forEach(function (item, i) {
+  tabs.forEach(function (item, i) {
     item.addEventListener('click', function () {
       $('.prices__slider').slick('goTo', i);
       toggleClass(i);
@@ -144,6 +116,8 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     }]
   });
+  /* Header Menu */
+
   var $menu = $('.header');
   var $heightMain = $('.main').height();
 
@@ -160,6 +134,8 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+  /* Links */
+
 
   $("a[href^='#']").click(function () {
     var _href = $(this).attr('href');
@@ -169,14 +145,15 @@ window.addEventListener('DOMContentLoaded', function () {
     });
     return false;
   });
+  /* Burger */
 
-  function clickBurger(_ref2) {
-    var btn = _ref2.btn,
-        navigation = _ref2.navigation,
-        firstLine = _ref2.firstLine,
-        secondLine = _ref2.secondLine,
-        thirdLine = _ref2.thirdLine,
-        navLinks = _ref2.navLinks;
+  function clickBurger(_ref) {
+    var btn = _ref.btn,
+        navigation = _ref.navigation,
+        firstLine = _ref.firstLine,
+        secondLine = _ref.secondLine,
+        thirdLine = _ref.thirdLine,
+        navLinks = _ref.navLinks;
     var menuBtn = document.querySelector(btn),
         nav = document.querySelector(navigation),
         lineOne = document.querySelector(firstLine),
@@ -212,6 +189,8 @@ window.addEventListener('DOMContentLoaded', function () {
     thirdLine: '.line--3',
     navLinks: '.nav__item a'
   });
+  /* Animation */
+
   var animItems = document.querySelectorAll('.anim-item');
 
   if (document.documentElement.clientWidth > 767) {
@@ -264,8 +243,10 @@ window.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-  $('#contactPhone, #bookPhone').mask('+40(999)-999-999', {
-    placeholder: "+40(   )-   -    "
+  /* Mask */
+
+  $('#contactPhone, #bookPhone').mask('+40-(999)-999-999', {
+    placeholder: "+40-(___)-___-___"
   });
   $('#bookDate').mask('99.99', {
     placeholder: "mm.dd"

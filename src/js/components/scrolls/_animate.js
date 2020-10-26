@@ -1,3 +1,5 @@
+/* Animation */
+
 const animItems = document.querySelectorAll('.anim-item');
 
 if (document.documentElement.clientWidth > 767) {
