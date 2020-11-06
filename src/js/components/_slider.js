@@ -5,12 +5,10 @@ $('.slider').slick({
     dots: true,
     speed: 1200,
     initialSlide: 1,
-    autoplay: false,
-    autoplaySpeed: 5000,
-    fade: true,
     cssEase: 'ease-out',
     touchThreshold: 12,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    infinite: false
 
 });
 
@@ -20,7 +18,8 @@ $('.prices__slider').slick({
     fade: true,
     swipe: false,
     cssEase: 'ease-out',
-    waitForAnimate: false
+    waitForAnimate: false,
+    speed: 0
 });
 
 $('.slider-menu').slick({

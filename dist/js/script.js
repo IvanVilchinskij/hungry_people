@@ -1,5 +1,7 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /* Webp */
 function testWebP(callback) {
   var webP = new Image();
@@ -54,21 +56,19 @@ window.addEventListener('DOMContentLoaded', function () {
     dots: true,
     speed: 1200,
     initialSlide: 1,
-    autoplay: false,
-    autoplaySpeed: 5000,
-    fade: true,
     cssEase: 'ease-out',
     touchThreshold: 12,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    infinite: false
   });
-  $('.prices__slider').slick({
+  $('.prices__slider').slick(_defineProperty({
     speed: 500,
     arrows: false,
     fade: true,
     swipe: false,
     cssEase: 'ease-out',
     waitForAnimate: false
-  });
+  }, "speed", 0));
   $('.slider-menu').slick({
     slidesToShow: 3,
     centerMode: true,
@@ -192,6 +192,7 @@ window.addEventListener('DOMContentLoaded', function () {
   /* Animation */
 
   var animItems = document.querySelectorAll('.anim-item');
+  var width = window.innerWidth;
 
   if (document.documentElement.clientWidth > 767) {
     if (animItems.length > 0) {
@@ -235,13 +236,19 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   window.addEventListener('resize', function () {
-    if (document.documentElement.clientWidth > 767) {
-      animItems.forEach(function (item) {
-        item.classList.remove('anim-item');
-        item.classList.remove('anim-active');
-        item.classList.add('default');
-      });
+    var newWidth = window.innerWidth;
+
+    if (width != newWidth) {
+      if (document.documentElement.clientWidth > 767) {
+        animItems.forEach(function (item) {
+          item.classList.remove('anim-item');
+          item.classList.remove('anim-active');
+          item.classList.add('default');
+        });
+      }
     }
+
+    width = newWidth;
   });
   /* Mask */
 

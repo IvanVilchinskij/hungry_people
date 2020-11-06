@@ -1,6 +1,7 @@
 /* Animation */
 
 const animItems = document.querySelectorAll('.anim-item');
+let width = window.innerWidth;
 
 if (document.documentElement.clientWidth > 767) {
     if (animItems.length > 0) {
@@ -41,13 +42,20 @@ if (document.documentElement.clientWidth > 767) {
 }
 
 window.addEventListener('resize', () => {
-    if (document.documentElement.clientWidth > 767) {
-        animItems.forEach(item => {
-            item.classList.remove('anim-item');
-            item.classList.remove('anim-active');
-            item.classList.add('default');
-        });
+    let newWidth = window.innerWidth;
+
+    if (width != newWidth) {
+        if (document.documentElement.clientWidth > 767) {
+            animItems.forEach(item => {
+                item.classList.remove('anim-item');
+                item.classList.remove('anim-active');
+                item.classList.add('default');
+            });
+        }
     }
+
+    width = newWidth;
+    
 });
 
 

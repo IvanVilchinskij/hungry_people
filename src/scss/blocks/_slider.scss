@@ -42,6 +42,16 @@
            border-radius: 100%;
        }
     }
+
+    .slick-slide {
+        opacity: 0;
+        transition: opacity .6s;
+
+        &.slick-active {
+            opacity: 1;
+            transition: opacity .6s;
+        }
+    }
 }
 
 .slick-list {
@@ -55,6 +65,7 @@
 
 .slick-track {
     display: flex;
+    align-items: flex-start;
 }
 
 .slider-menu {
