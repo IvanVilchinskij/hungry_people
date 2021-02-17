@@ -1,11 +1,15 @@
 .uptitle {
     font-weight: 700;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 14 /12 *100%;
     text-align: center;
     letter-spacing: 0.5em;
     text-transform: uppercase;
     color: #FFFFFF;
+
+    @media (max-width: 767px) {
+        font-size: 10px;
+    }
 }
 
 .title {
@@ -29,6 +33,7 @@
         background-color: $main_color;
         margin: 0 auto;
         border-radius: 5px;
+        
         @media (max-width: 575px) {
             height: 3px; 
             margin: 3px auto;  

@@ -1,5 +1,4 @@
 .photos {
-    
     .slider-photos {
         opacity: .1;
 
@@ -11,8 +10,8 @@
         &.default {
             opacity: 1;
         }
+        
         &__item {
-
             img {
                 display: block;
                 width: 100%;

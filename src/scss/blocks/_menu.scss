@@ -8,12 +8,12 @@
     @media (max-width: 991px){
         padding: 50px 0 20px;
     }
+
     @media (max-width: 767px) {
         padding: 30px 0 20px;
     }
 
     .text {
-
         opacity: 0;
         transform: perspective(300px) translate3d(0, 200px, -500px);
 
@@ -27,10 +27,12 @@
             opacity: 1;
             transform: none;
         }
+        
         @media (max-width: 767px) {
             opacity: 1;
             transform: none;
         }
+
         &__title {
             &:after{
                 width: 60px;
@@ -45,17 +47,19 @@
         &__subtitle {
             width: 44.2%;
             margin-bottom: 50px;
+
             @media (max-width: 1199px){
                 width: 70%;
                 margin-bottom: 30px;
             }
+
             @media (max-width: 767px) {
                 width: 95%;
             }
+
             @media (max-width: 575px) {
                 width: 100%;
             }
-
         }
     }
 
@@ -67,6 +71,7 @@
         &.anim-active {  
             .tabs__item {
                 border-left: 1px solid rgba(51, 51, 51, 0.2);
+
                 @for $var from 1 to 8 { 
                     $delay: $var * 0.2 + 0.7;
                     &:nth-child(#{$var}) {                       
@@ -96,7 +101,6 @@
             }
         }
     
-
         @media (max-width: 991px) {
             margin-bottom: 30px;
         }
@@ -130,13 +134,16 @@
                 height: 35px;
                 width: 120 / 535 * 100%;
             }
+
             @media (max-width: 767px) {
                 opacity: 1;
                 transform: none;
                 border-left: 1px solid rgba(51, 51, 51, 0.2);
             }
+
             &:first-child {
                 border-left: none !important;
+
                 @media (max-width: 575px) {
                     border-left: 1px solid rgba(51, 51, 51, 0.2) !important;
                 }
@@ -172,8 +179,13 @@
             @media (max-width: 1199px) {
                 width: 100%;
             }
+
             @media (max-width: 767px) {
                 margin: 0 auto 15px;
+            }
+
+            &:last-child {
+                margin: 0 auto;
             }
         }
 
@@ -189,6 +201,7 @@
             @media (max-width: 1280px) {
                 font-size: 16px;
             }
+
             @media (max-width: 575px) {
                 font-size: 14px;
             }
@@ -197,11 +210,11 @@
                 display: flex;
                 justify-content: space-between;
             }
-
         }
 
         &__title {
             margin-right: 15px;
+
             @media (max-width: 575px) {
                 margin-right: 8px;
                 margin-left: 5px;
@@ -214,6 +227,7 @@
             font-size: 12px;
             line-height: 18px;
             color: rgba(51, 51, 51, 0.5);
+
             @media (max-width: 575px) {
                 font-size: 11px;
                 padding-left: 5px;
@@ -237,5 +251,4 @@
             }
         }
     }
-
 }

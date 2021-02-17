@@ -30,8 +30,6 @@ body {
     overflow-x: hidden;
 }
 
-
-
 .container {
     max-width: 1440px;
     padding: 0 80px;
@@ -46,8 +44,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 8px; /* ширина для вертикального скролла */
-    height: 8px; /* высота для горизонтального скролла */
+    width: 8px;
+    height: 8px; 
     background-color: #333;
     
 }
@@ -55,13 +53,14 @@ body {
     background-color: $main_color;
     border-radius: 5px;
 }
+
 ::-webkit-scrollbar-button:vertical:start:decrement {
     display: none;
 }
+
 ::-webkit-scrollbar-button:vertical:end:increment {
     display: none;
 }
-
 
 // Blocks
 

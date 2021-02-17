@@ -34,19 +34,21 @@
                 height: 100%;
                 transition: height .4s ease-in-out 4.8s;
             }
-
         }
 
         &--center {
             top: 203px;
             left: 50%;
+
             &.anim-active {
                 height: 454px;
                 transition: height .3s ease-in-out 4.8s;
+
                 @media (max-width: 1199px) {
                     height: 404px;
                     transition: height .3s ease-in-out 4.8s;
                 }
+
                 @media (max-width: 991px) {
                     height: 428px;
                     transition: height .3s ease-in-out 4.8s;
@@ -55,9 +57,11 @@
 
             &.default {
                 height: 454px;
+
                 @media (max-width: 1199px) {
                     height: 404px;
                 }
+
                 @media (max-width: 991px) {
                     height: 428px;
                 }
@@ -67,6 +71,7 @@
                 height: 0;
                 top: 183px;
             }
+
             @media (max-width: 991px) {
                 top: 117px;
                 height: 0; 
@@ -75,6 +80,7 @@
 
         &--right {
             right: 295 / 1440 * 100%;
+
             &.anim-active {
                 height: 100%;
                 transition: height .4s ease-in-out 4.8s;
@@ -93,13 +99,16 @@
         @media (max-width: 1199px)  {
             padding-top: 270px;
         }
+
         @media (max-width: 991px) {
             flex-direction: column-reverse;
             padding-top: 220px;
         }
+
         @media (max-width: 767px) {
             padding-top: 160px;
         }
+
         @media (max-width: 575px) {
             padding-top: 150px;
         }
@@ -136,6 +145,7 @@
                 justify-content: center;
                 margin-top: 30px;
             }
+
             @media (max-width: 767px){
                 margin: 20px 0 30px;
                 opacity: 1;
@@ -188,6 +198,7 @@
 
             &.default {
                 opacity: 1;
+
                 &:after {
                     opacity: 1;
                 }
@@ -197,6 +208,7 @@
             &:after {
                 margin: 30px auto;
                 opacity: 0;
+
                 @media (max-width: 767px) {
                     margin: 15px auto;
                     opacity: 1;
@@ -218,6 +230,7 @@
         &__btns {
             display: flex;
             justify-content: center;
+
             @media (max-width: 575px) {
                 flex-direction: column;
             }
@@ -228,9 +241,11 @@
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.5);
             transition: background-color .4s, border .4s, left .6s ease-in-out 5.2s, opacity .6s ease-in-out 5.2s;
+
             @media (max-width: 767px) {
                 height: 45px;
             }
+
             @media (max-width: 575px) {
                 width: 100%;
             }
@@ -249,6 +264,7 @@
                 margin-right: 10px;
                 left: -100%;
                 opacity: 0;
+
                 @media (max-width: 575px) {
                     margin: 0 0 10px;
                 }
@@ -268,17 +284,18 @@
                     left: 0;
                     opacity: 1;
                     transition: background-color .4s;
-                }
-                
+                }    
             }
 
             &--right {
                 margin-left: 10px;
                 right: -100%;
                 opacity: 0;
+
                 @media (max-width: 575px) {
                     margin: 0;
                 }
+
                 @media (max-width: 767px) {
                     right: 0;
                     opacity: 1;
@@ -355,10 +372,6 @@
 
     .btn-wrapper {
         padding-bottom: 83px;
-        /* a {
-            display: block;
-        } */
-        
 
         @media (max-width: 1199px) {
             padding-bottom: 70px;
@@ -367,6 +380,7 @@
         @media (max-width: 991px){
             padding-bottom: 50px;
         }
+
         @media (max-width: 767px) {
             display: none;
         }
@@ -419,8 +433,7 @@
             height: 83px;
             background: rgba(255, 255, 255, 0.2);
             margin: 0 auto;
-            opacity: 0;
-            
+            opacity: 0;           
         }
 
         &:hover {

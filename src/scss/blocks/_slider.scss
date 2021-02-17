@@ -19,6 +19,10 @@
 
         @media (max-width: 991px){
             margin-top: 20px;
+            padding-bottom: 20px;
+        }
+        @media (max-width: 767px) {
+            margin-top: 10px;
         }
 
        li {
@@ -28,8 +32,7 @@
             &.slick-active {
                 button {
                     background: #FFFFFF;
-                }
-                
+                }         
             }
        }
 
@@ -58,6 +61,7 @@
     overflow: hidden;
     position: relative;
     z-index: 3;
+
     @media (max-width: 767px) {
         height: auto;
     }
@@ -72,6 +76,7 @@
     .slick-list {
         padding: 0 !important;
     }
+
     .slick-track {
         justify-content: space-between;
     }
@@ -80,11 +85,12 @@
         display: flex;
         justify-content: center;
         margin-top: 20px;
-        @media (max-width: 991px) {
-            margin-top: 0;
+
+        @media (max-width: 767px) {
+            margin-top: 10px;
         }
 
-       li {
+        li {
            list-style: none;
            margin: 0 12.5px;
 
@@ -92,20 +98,16 @@
                 button {
                     background: $main_color;
                 }
-                
             }
-       }
+        }
 
-       button {
+        button {
            font-size: 0;
            width: 10px;
            height: 10px;
            border: 1px solid $main_color;
            background: #fff;
            border-radius: 100%;
-       }
-
-        
-        
+        }       
     }
 }

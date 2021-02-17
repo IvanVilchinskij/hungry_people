@@ -14,15 +14,13 @@
         height: 70px;
         background: rgba(0, 0, 0, .8);
     }
+
     @media (max-width: 575px) {
         padding: 10px 20px 0;  
     }
 
     &__title {
         display: none;
-        @media (max-width: 767px) {
-            display: block;
-        }
 
         font-family: 'Banny';
         font-weight: 700;
@@ -31,30 +29,33 @@
         text-transform: uppercase;
         color: #FFFFFF;
 
+        @media (max-width: 767px) {
+            display: block;
+        }
     }
 
     &__icon {
         display: none;
-        @media (max-width: 767px) {
-            display: block;
-        }
+        
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
 
-        svg {
-            fill: $main_color;
-            width: 100px;
-            height: 100px;
-            stroke: black;
-            
-            
+        @media (max-width: 767px) {
+            display: block;
         }
 
         @media (max-width: 575px) {
             display: none;
         }
+
+        svg {
+            fill: $main_color;
+            width: 100px;
+            height: 100px;
+            stroke: black;   
+        }      
     }
 
     &.fixed {
@@ -107,6 +108,7 @@
     z-index: 100;
     cursor: pointer;
     transition: left .9s cubic-bezier(.9, 0, .33, 1);
+
     &.active {
         left: 3%;
         transition: left .2s cubic-bezier(.9, 0, .33, 1);
@@ -117,6 +119,7 @@
         height: 15px;
         width: 30px;
     }
+
     @media (max-width: 575px) {
         left: -50px;
     }
@@ -214,6 +217,7 @@
     &__list {
         display: flex;
         width: 532 / 1280 * 100%;
+
         @media (max-width: 767px) {
             flex-direction: column;
             width: 100%;
@@ -227,6 +231,7 @@
             @media (max-width: 767px) {
                 justify-content: flex-end;
             }
+
             &.anim-active {
                 .nav__item {               
                     @for $var from 1 to 5 { 
@@ -237,8 +242,7 @@
                             } @else {
                                 animation: nav-item .6s ease-out #{$delay + s} forwards;
                             }
-                        }
-                        
+                        } 
                     }
                 }
             }
@@ -250,13 +254,10 @@
                             opacity: 1;
                             transform: none;
                             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                        }
-                        
+                        }            
                     }
                 }
             }
-            
-            
         }
 
         &--right {
@@ -270,8 +271,7 @@
                             } @else {
                                 animation: nav-item .6s ease-out #{$delay + s} forwards;
                             }
-                        }
-                        
+                        }       
                     }
                 }
             }
@@ -283,15 +283,11 @@
                             opacity: 1;
                             transform: none;
                             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                        }
-                        
+                        }             
                     }
                 }
             }
         }
-
-        
-
     }
 
     &__item {
@@ -312,12 +308,11 @@
             border-bottom: 1px solid transparent;
             transition: all .4s;
             
-
             &:hover {
                 color: $main_color;
-                border-bottom: 1px solid $main_color;
-                
+                border-bottom: 1px solid $main_color;       
             }
+
             @media (max-width: 767px) {
                 font-size: 16px;
                 display: flex;
@@ -326,21 +321,21 @@
                 width: 100%;
                 height: 100%;
                 border-bottom: none;
+
                 &:hover {
-                    border-bottom: none;
-                    
+                    border-bottom: none;     
                 }
             }
 
             @media (max-width: 575px) {
-                font-size: 18px;
-                
+                font-size: 18px;          
             }
         }
 
         @media (max-width: 991px) {
             height: 50px;     
         }
+
         @media (max-width: 767px) {
             width: 60%;
             border-bottom: none !important; 
